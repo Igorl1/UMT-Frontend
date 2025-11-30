@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMT - Login</title>
-    {% include 'tracker/header.html' %}
+    <link rel="stylesheet" href="http://127.0.0.1:8080/styles.css">
 </head>
 <body>
-    {% include 'accounts/global_links.html' %}
-    <h1><strong>Login</strong></h1>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/accounts/home/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1><strong>Login</strong></h1>
 
-    {% if form.errors %}
-        <div style="color: rgb(255, 0, 0); background-color: #ffebee; padding: 10px; border: 1px solid red; margin: 10px 0;">
-            <strong>Please correct the following errors:</strong>
-            {{ form.errors }}
-        </div>
-    {% endif %}
+        <div id="error-message" class="error" style="display: none;"></div>
 
-    <form action="" method="POST">
-        {% csrf_token %}
-        <table class='form'>
-            {{ form.as_table }}
-        </table>
-        <button type="submit" class="btn btn-secondary"><strong>Login</strong></button>
-    </form>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p><a href="/registration/forgot_password/">Forgot Password?</a></p>
+    </div>
+    <script src="http://127.0.0.1:8080/dist/registration/login.js"></script>
 </body>
 </html>

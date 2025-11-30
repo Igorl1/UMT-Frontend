@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMT - Unified Media Tracker</title>
-    {% include '../tracker/header.html' %}
+    <link rel="stylesheet" href="http://127.0.0.1:8080/styles.css">
 </head>
 <body>
-    <div style="text-align: center; padding: 50px 20px;">
+    <div class="container" style="text-align: center; padding: 50px 20px;">
         <h1><strong>Welcome to Unified Media Tracker (UMT)</strong></h1>
         <p style="font-size: 18px; margin: 30px 0;">Track your favorite movies, books, games, and more!</p>
-        
+
         <div style="margin: 40px 0;">
             <h2>Get Started</h2>
             <p>Create an account or log in to start tracking your media collection.</p>
-            
+
             <div style="margin: 30px 0;">
-                <a href="/registration/" class="btn btn-primary" style="margin: 10px;">
+                <a href="/registration/sign_up/" class="btn btn-primary" style="margin: 10px; display: inline-block; padding: 10px 20px; background: #333; color: white; text-decoration: none;">
                     <strong>Create Account</strong>
                 </a>
-                <a href="/accounts/login/" class="btn btn-secondary" style="margin: 10px;">
+                <a href="/registration/login/" class="btn btn-secondary" style="margin: 10px; display: inline-block; padding: 10px 20px; background: #555; color: white; text-decoration: none;">
                     <strong>Login</strong>
                 </a>
             </div>
         </div>
-        
+
         <div style="margin: 50px 0;">
             <h3>Features</h3>
             <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
@@ -35,5 +35,6 @@
             </ul>
         </div>
     </div>
+    <script src="http://127.0.0.1:8080/dist/accounts/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "name": "umt-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for UMT Media Tracker",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "serve": "python -m http.server 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

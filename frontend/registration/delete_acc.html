@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UMT - Account Deletion</title>
-    {% include 'tracker/header.html' %}
-</head>
-<body>
-    {% include 'tracker/global_links.html' %}
-    
-    {% if error_message %}
-        <div style="color: red; background-color: #ffebee; padding: 15px; border: 1px solid red; margin: 20px 0; border-radius: 5px;">
-            <strong>Account Deletion Not Allowed</strong><br>
-            {{ error_message }}
-        </div>
-        <a href="{% url 'home' %}" class="btn btn-primary"><strong>Go Home</strong></a>
-    {% else %}
-        <h1><strong>Are you sure you want to delete your account?</strong></h1>
-        <p style="color: #ff6b6b; font-weight: bold;">This action cannot be undone. All your data will be permanently lost.</p>
+    <link rel="stylesheet" href="http://127.0.0.1:8080/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <ul>
+          <li><a href="/tracker/">Home</a></li>
+          <li><a href="/tracker/add/">Add Media</a></li>
+          <li><a href="/accounts/change_password/">Change Password</a></li>
+          <li><a href="/delete_account/">Delete Account</a></li>
+          <li><a href="/swagger/" target="_blank">API Documentation</a></li>
+          <li><a href="/registration/logout/">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>Delete Account</h1>
+      <p style="color: #ff6b6b; font-weight: bold">
+        This action cannot be undone. All your data will be permanently lost.
+      </p>
 
-        <form method="post" action ="{% url 'delete_account' %}">
-            <fieldset style="width: max-content;">
-                {% csrf_token %}
-                <a href="{% url 'home' %}" class="btn btn-secondary"><strong>Cancel</strong></a>
-                <span style="margin-left: 50px;"></span>
-                <button type="submit" class="btn btn-danger"><strong>Delete Account</strong></button>
-            </fieldset>
-        </form>
-    {% endif %}
-</body>
+      <div id="error-message" class="error" style="display: none"></div>
+      <div id="success-message" style="color: green; display: none"></div>
+
+      <button id="delete-account-btn">Delete Account</button>
+    </div>
+    <script src="http://127.0.0.1:8080/dist/registration/delete_acc.js"></script>
+  </body>
 </html>

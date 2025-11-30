@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMT - Logout</title>
-    {% include 'tracker/header.html' %}
+    <link rel="stylesheet" href="http://127.0.0.1:8080/styles.css">
 </head>
 <body>
-    {% include 'tracker/global_links.html' %}
-    <h1><strong>Are you sure you want to log out?</strong></h1>
-    <form method="post" action ="{% url 'logout' %}">
-        <fieldset style="width: max-content;">
-            {% csrf_token %}
-            <a href="{% url 'home' %}" class="btn btn-secondary"><strong>Cancel</strong></a>
-            <span style="margin-left: 50px;"></span>
-            <button type="submit" class="btn btn-danger"><strong>Logout</strong></button>
-        </fieldset>
-    </form>
+    <div class="container">
+        <h1>Are you sure you want to log out?</h1>
+        <button id="cancel-btn">Cancel</button>
+        <button id="logout-btn" style="background: red; color: white;">Logout</button>
+    </div>
+    <script src="http://127.0.0.1:8080/dist/registration/logout.js"></script>
 </body>
 </html>

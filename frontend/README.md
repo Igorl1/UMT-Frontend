@@ -6,7 +6,7 @@ Unified Media Tracker (UMT) é um site simples que busca centralizar anotações
 
 Integrante: Igor Soares Lemos - 2011287
 
-# **> Como instalar**
+# **> Como instalar ( Backend )**
 
 ### Backend (Django) https://github.com/Igorl1/UMT-Backend
 

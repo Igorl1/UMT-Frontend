@@ -4,19 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMT - Edit Media</title>
-    {% include 'tracker/header.html' %}
+    <link rel="stylesheet" href="http://127.0.0.1:8080/styles.css">
 </head>
 <body>
-    {% include 'tracker/global_links.html' %}
-    <h1><strong>Editing "{{ media.title }}"</strong></h1>
-    <form action="" method="POST">
-        <fieldset style="width: max-content;">
-            {% csrf_token %}
-            <table class='form'>
-                {{ form.as_table }}
-            </table>
-            <button type="submit" class="btn btn-secondary"><strong>Update</strong></button>
-        </fieldset>
-    </form>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/tracker/">Home</a></li>
+                <li><a href="/tracker/add/">Add Media</a></li>
+                <li><a href="/accounts/change_password/">Change Password</a></li>
+                <li><a href="/delete_account/">Delete Account</a></li>
+                <li><a href="/swagger/" target="_blank">API Documentation</a></li>
+                <li><a href="/registration/logout/">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 id="edit-title">Editing Media</h1>
+
+        <div id="error-message" class="error" style="display: none;"></div>
+
+        <form id="edit-media-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="">Select Status</option>
+                <option value="consuming">Consuming</option>
+                <option value="completed">Completed</option>
+                <option value="on_hold">On Hold</option>
+                <option value="dropped">Dropped</option>
+                <option value="planned">Planned</option>
+            </select>
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating">
+                <option value="">Select Rating</option>
+                <option value="1">1 - Terrible</option>
+                <option value="2">2 - Very Bad</option>
+                <option value="3">3 - Bad</option>
+                <option value="4">4 - Poor</option>
+                <option value="5">5 - Average</option>
+                <option value="6">6 - Fine</option>
+                <option value="7">7 - Good</option>
+                <option value="8">8 - Very Good</option>
+                <option value="9">9 - Great</option>
+                <option value="10">10 - Masterpiece</option>
+            </select>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+                <option value="">Select Type</option>
+                <option value="movie">Movie</option>
+                <option value="book">Book</option>
+                <option value="game">Game</option>
+                <option value="series">Series</option>
+                <option value="anime">Anime</option>
+                <option value="manga">Manga</option>
+                <option value="tv_show">TV Show</option>
+                <option value="podcast">Podcast</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    <script src="http://127.0.0.1:8080/dist/tracker/edit_media.js"></script>
 </body>
 </html>

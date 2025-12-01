@@ -1,6 +1,8 @@
 "use strict";
 // login.ts - Login functionality
-const LOGIN_API_BASE_URL = "http://127.0.0.1:8000"; // Adjust for production
+const LOGIN_API_BASE_URL = window.location.hostname.includes("pythonanywhere.com")
+    ? "https://igorl1.pythonanywhere.com"
+    : "http://127.0.0.1:8000";
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("login-form");
     const errorDiv = document.getElementById("error-message");

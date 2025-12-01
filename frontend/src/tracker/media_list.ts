@@ -1,5 +1,9 @@
 // media_list.ts - Media list functionality
-const MEDIA_LIST_API_BASE_URL = "http://127.0.0.1:8000/tracker"; // Adjust for production
+const MEDIA_LIST_API_BASE_URL = window.location.hostname.includes(
+  "pythonanywhere.com"
+)
+  ? "https://igorl1.pythonanywhere.com/tracker"
+  : "http://127.0.0.1:8000/tracker";
 
 function getCsrfTokenMediaList() {
   const name = "csrftoken";

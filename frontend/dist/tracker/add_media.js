@@ -1,6 +1,8 @@
 "use strict";
 // add_media.ts - Add media functionality
-const ADD_MEDIA_API_BASE_URL = "http://127.0.0.1:8000/tracker"; // Adjust for production
+const ADD_MEDIA_API_BASE_URL = window.location.hostname.includes("pythonanywhere.com")
+    ? "https://igorl1.pythonanywhere.com/tracker"
+    : "http://127.0.0.1:8000/tracker";
 function getCsrfTokenAddMedia() {
     const name = "csrftoken";
     let cookieValue = null;

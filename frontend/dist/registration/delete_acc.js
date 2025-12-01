@@ -1,6 +1,8 @@
 "use strict";
 // delete_acc.ts - Delete account functionality
-const DELETE_ACC_API_BASE_URL = "http://127.0.0.1:8000"; // Adjust for production
+const DELETE_ACC_API_BASE_URL = window.location.hostname.includes("pythonanywhere.com")
+    ? "https://igorl1.pythonanywhere.com"
+    : "http://127.0.0.1:8000";
 function getCsrfTokenDeleteAcc() {
     const name = "csrftoken";
     let cookieValue = null;

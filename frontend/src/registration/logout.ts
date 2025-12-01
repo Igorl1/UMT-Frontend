@@ -1,5 +1,9 @@
 // logout.ts - Logout functionality
-const LOGOUT_API_BASE_URL = "http://127.0.0.1:8000"; // Adjust for production
+const LOGOUT_API_BASE_URL = window.location.hostname.includes(
+  "pythonanywhere.com"
+)
+  ? "https://igorl1.pythonanywhere.com"
+  : "http://127.0.0.1:8000";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cancelBtn = document.getElementById("cancel-btn") as HTMLButtonElement;

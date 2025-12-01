@@ -1,6 +1,8 @@
 "use strict";
 // forgot_password.ts - Forgot password functionality
-const FORGOT_PASSWORD_API_BASE_URL = "http://127.0.0.1:8000"; // Adjust for production
+const FORGOT_PASSWORD_API_BASE_URL = window.location.hostname.includes("pythonanywhere.com")
+    ? "https://igorl1.pythonanywhere.com"
+    : "http://127.0.0.1:8000";
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("forgot-password-form");
     const errorDiv = document.getElementById("error-message");
